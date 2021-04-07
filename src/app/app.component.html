@@ -1,0 +1,36 @@
+<div class='appContainer'>
+    <div class="myNav">
+        <div class="appHeader menu-buttons">
+            <a class="appName" style="color: yellow;" href="# ">Photo Albums App</a>
+        </div>
+        <div id="menuTabs" *ngIf="userService.idToken | async">
+            <div class="menu-buttons">
+                <a [routerLink]="[ 'albums/recent'] ">Home</a>
+            </div>
+            <div class="menu-buttons">
+                <a [routerLink]="[ '/profile/me'] ">Profile</a>
+            </div>
+            <div class="menu-buttons">
+                <a [routerLink]="[ '/albums/me'] ">Albums</a>
+            </div>
+            <div class="menu-buttons btn-danger" style="float:right;">
+                <a (click)="logout()">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let logMessage of loggingService.logMessages">
+        <div class="alert alert-danger" role="alert">
+            {{logMessage}}
+        </div>
+    </div>
+    <div *ngIf="loggingService.logMessages.length">
+        <button type="button" class="btn btn-info" (click)="clearLogMessages()">Clear</button>
+    </div>
+    <div class='mainArea'>
+        <router-outlet></router-outlet>
+    </div>
+    <div class='appFooter'>End Of Page
+    </div>
+</div>
