@@ -1,6 +1,6 @@
 Please add the environments/environment.ts confiugration file  for proper functioning of the app. It contains the Firebase IAM and Base URL configurations.
 
-# PhotoAlbumApp
+# ShareIt Front end
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
